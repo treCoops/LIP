@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">LIP</string>
+    <string name="lip">Little Italy Pizzeria</string>
+    <string name="welcome">Welcome</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full name</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="register">Register</string>
+    <string name="logout">Logout</string>
+    <string name="search_a_city">Search a city</string>
+    <string name="we_need_to_know_your_location_in_order_to_take_your_current_city">We need to know your location in order to take your current city</string>
+    <string name="enable_location">Enable Location</string>
+    <string name="enable">Enable</string>
+    <string name="howdy_user">Howdy, User</string>
+    <string name="next_7_days">Next 7 days</string>
+</resources>

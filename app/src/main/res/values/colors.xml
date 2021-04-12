@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0C17EA</color>
+    <color name="colorPrimaryDark">#4D9FF3</color>
+    <color name="colorAccent">#B7DAFF</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lightGray">#0FFFFFFF</color>
+
+    <color name="appIconBackground">#8CD1E7</color>
+    <color name="toolTipBackground">#6D252525</color>
+
+    //Activity Background Colors
+    <color name="loginBackground">#F4F5FA</color>
+
+    //Font Colors
+    <color name="loginMainTitleColor">#23233C</color>
+
+    //Button Color
+    <color name="btnMainColor">#23233C</color>
+
+    //Text Colors
+    <color name="textNavigation">#898888</color>
+
+    //Alert Colors
+    <color name="AlertRed">#E44848</color>
+    <color name="AlertGreen">#65E448</color>
+    <color name="AlertBlue">#2A3EBD</color>
+    <color name="AlertYellow">#FFEB3B</color>
+    <color name="AlertGray">#8C8C89</color>
+    <color name="dark_black">#000000</color>
+
+
+</resources>
