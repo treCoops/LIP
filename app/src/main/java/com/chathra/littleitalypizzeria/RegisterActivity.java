@@ -16,10 +16,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.chathra.littleitalypizzeria.Helper.AlertBar;
 import com.chathra.littleitalypizzeria.Helper.ProgressDialog;
 import com.chathra.littleitalypizzeria.Helper.ToolTip;
 import com.chathra.littleitalypizzeria.Helper.Validator;
+import com.chathra.littleitalypizzeria.Model.UserModel;
 import com.chathra.littleitalypizzeria.Util.ConnectionUtil;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
@@ -28,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText txtFullName, txtRegisterEmailAddress, txtPassword, txtConfirmPassword;
     ImageView imgFullNameStatus, imgEmailStatus, imgPasswordStatus, imgConfirmPasswordStatus;
 
-//    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
     ProgressDialog progressDialog;
 
     @Override
@@ -51,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
         imgPasswordStatus = findViewById(R.id.imgPasswordStatus);
         imgConfirmPasswordStatus = findViewById(R.id.imgConfirmPasswordStatus);
 
-//        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         progressDialog = new ProgressDialog();
 
@@ -125,7 +130,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-//                createAccount(txtRegisterEmailAddress.getText().toString().toLowerCase().trim(), txtPassword.getText().toString());
+                createAccount(txtRegisterEmailAddress.getText().toString().toLowerCase().trim(), txtPassword.getText().toString());
             }
         });
 
@@ -241,38 +246,38 @@ public class RegisterActivity extends AppCompatActivity {
         finishAffinity();
     }
 
-//    void createAccount(String email, String password){
-//        progressDialog.showProgressBar(RegisterActivity.this);
-//        mAuth.createUserWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this, task -> {
-//                    if (task.isSuccessful()) {
-//                        FirebaseUser user = mAuth.getCurrentUser();
-//                        saveUser(user.getUid());
-//
-//                    } else {
-//                        AlertBar.notifyDanger(RegisterActivity.this, Objects.requireNonNull(task.getException()).getMessage());
-//                        progressDialog.dismissProgressBar();
-//                    }
-//                });
-//    }
-//
-//    void saveUser(String uID){
-//        FirebaseDatabase.getInstance().getReference().child("Users").child(uID).setValue(new UserModel(txtFullName.getText().toString(), uID, txtRegisterEmailAddress.getText().toString().trim().toLowerCase()))
-//                .addOnSuccessListener(aVoid -> {
-//                    progressDialog.dismissProgressBar();
-//                    AlertBar.notifySuccess(RegisterActivity.this, "Account Created Successfully.");
-//                    new Handler().postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-//                            Animatoo.animateSlideRight(RegisterActivity.this);
-//                            finishAffinity();
-//                        }
-//                    },2000);
-//                })
-//                .addOnFailureListener(e -> {
-//                    progressDialog.dismissProgressBar();
-//                    AlertBar.notifyDanger(RegisterActivity.this, "Operation failed!");
-//                });
-//    }
+    void createAccount(String email, String password){
+        progressDialog.showProgressBar(RegisterActivity.this);
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        saveUser(user.getUid());
+
+                    } else {
+                        AlertBar.notifyDanger(RegisterActivity.this, Objects.requireNonNull(task.getException()).getMessage());
+                        progressDialog.dismissProgressBar();
+                    }
+                });
+    }
+
+    void saveUser(String uID){
+        FirebaseDatabase.getInstance().getReference().child("Users").child(uID).setValue(new UserModel(txtFullName.getText().toString(), uID, txtRegisterEmailAddress.getText().toString().trim().toLowerCase()))
+                .addOnSuccessListener(aVoid -> {
+                    progressDialog.dismissProgressBar();
+                    AlertBar.notifySuccess(RegisterActivity.this, "Account Created Successfully.");
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                            Animatoo.animateSlideRight(RegisterActivity.this);
+                            finishAffinity();
+                        }
+                    },2000);
+                })
+                .addOnFailureListener(e -> {
+                    progressDialog.dismissProgressBar();
+                    AlertBar.notifyDanger(RegisterActivity.this, "Operation failed!");
+                });
+    }
 }

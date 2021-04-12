@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "234236816197",
+    "project_id": "litalyp-dc340",
+    "storage_bucket": "litalyp-dc340.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234236816197:android:d197437cc7b4182c6bec2c",
+        "android_client_info": {
+          "package_name": "com.chathra.littleitalypizzeria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234236816197-if89dvs0beh85pdo8v21gc52ft7ulbrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCICK7cx-2Hn8Mko_k6jKTvjTv1uueenBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234236816197-if89dvs0beh85pdo8v21gc52ft7ulbrj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
