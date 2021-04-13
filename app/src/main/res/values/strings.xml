@@ -18,4 +18,22 @@
     <string name="enable">Enable</string>
     <string name="howdy_user">Howdy, User</string>
     <string name="next_7_days">Next 7 days</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Customer Name</string>
+    <string name="nav_header_subtitle">Customer ID</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="food">Foods</string>
+    <string name="profile">Profile</string>
+    <string name="contact">Contact Us</string>
+
+
+    <string name="tab_text_1">Pizza</string>
+    <string name="tab_text_2">Pasta</string>
+    <string name="tab_text_3">Beverages</string>
+    <string name="tab_text_4">Desserts</string>
+
+
 </resources>

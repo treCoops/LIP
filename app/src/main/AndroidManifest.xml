@@ -13,10 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RegisterActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".DessertActivity"></activity>
+        <activity android:name=".BeveragesActivity" />
+        <activity android:name=".PastaActivity" />
+        <activity android:name=".PizzaActivity" />
+        <activity android:name=".ContactActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".FoodActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait" />

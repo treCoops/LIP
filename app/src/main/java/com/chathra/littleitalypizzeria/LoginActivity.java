@@ -65,12 +65,12 @@ public class LoginActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog();
 
-//        if(ConnectionUtil.isInternetAvailable(getApplicationContext(), LoginActivity.this)){
-//            if(mAuth.getCurrentUser() != null){
-//                progressDialog.showProgressBar(LoginActivity.this);
-//                getUserData(mAuth.getUid());
-//            }
-//        }
+        if(ConnectionUtil.isInternetAvailable(getApplicationContext(), LoginActivity.this)){
+            if(mAuth.getCurrentUser() != null){
+                progressDialog.showProgressBar(LoginActivity.this);
+                getUserData(mAuth.getUid());
+            }
+        }
 
         btnLogin.setOnClickListener(v -> {
 

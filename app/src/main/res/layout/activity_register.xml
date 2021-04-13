@@ -225,6 +225,8 @@
             android:layout_marginTop="@dimen/_50sdp"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
+            android:clickable="true"
+            android:focusable="true"
             android:background="@drawable/button_background"
             android:textColor="@color/white"
             android:fontFamily="@font/montserrat_bold"
@@ -252,6 +254,8 @@
                 android:layout_marginStart="@dimen/_3sdp"
                 android:layout_toEndOf="@+id/txtSignInHeading"
                 android:id="@+id/txtSignIn"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/login"/>
