@@ -1,7 +1,7 @@
 package com.chathra.littleitalypizzeria.Adapter;
 
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.chathra.littleitalypizzeria.Model.ProductModel;
+import com.chathra.littleitalypizzeria.ProductSingleViewActivity;
 import com.chathra.littleitalypizzeria.R;
 import com.squareup.picasso.Picasso;
 
@@ -22,6 +25,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     List<ProductModel> productDataList;
     Context context;
 
+
     public ProductAdapter(List<ProductModel> productDataList, Context context) {
         this.productDataList = productDataList;
         this.context = context;
@@ -31,6 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_cell, parent, false);
+
         return new ViewHolder(itemView);
     }
 
@@ -43,7 +48,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         }else{
             holder.txtDescription.setText(data.getDescription());
         }
-
 
         holder.txtName.setText(data.getName());
         holder.txtPrice.setText(data.getPrice());
@@ -60,6 +64,27 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         Log.e("Error", e.getLocalizedMessage());
                     }
                 });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ProductModel product = productDataList.get(position);
+
+                Intent intent = new Intent(context, ProductSingleViewActivity.class);
+                intent.putExtra("ID", product.getId());
+                intent.putExtra("NAME", product.getName());
+                intent.putExtra("DESCRIPTION", product.getDescription());
+                intent.putExtra("PRICE", product.getPrice());
+                intent.putExtra("URL", product.getImgUrl());
+
+                context.startActivity(intent);
+                Animatoo.animateSlideLeft(context);
+
+            }
+        });
+
+
     }
 
     @Override
@@ -77,6 +102,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             txtDescription = itemView.findViewById(R.id.txtDescription);
             txtPrice = itemView.findViewById(R.id.txtPrice);
         }
+
     }
 
 }

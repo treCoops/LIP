@@ -49,8 +49,6 @@ public class BeveragesActivity extends Fragment {
 
         recyclePizza = view.findViewById(R.id.recyclePizza);
 
-
-
         layoutManager = new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL, false);
         recyclePizza.setLayoutManager(layoutManager);
 

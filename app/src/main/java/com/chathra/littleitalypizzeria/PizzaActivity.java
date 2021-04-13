@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -39,6 +40,8 @@ public class PizzaActivity extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     ProductAdapter productAdapter;
 
+
+
     Vibrator vibrator;
 
     @Nullable
@@ -51,8 +54,6 @@ public class PizzaActivity extends Fragment {
         vibrator = (Vibrator) view.getContext().getSystemService(Context.VIBRATOR_SERVICE);
 
         recyclePizza = view.findViewById(R.id.recyclePizza);
-
-
 
         layoutManager = new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL, false);
         recyclePizza.setLayoutManager(layoutManager);

@@ -9,13 +9,18 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.chathra.littleitalypizzeria.Helper.AlertBar;
 import com.developer.kalert.KAlertDialog;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+
+    private boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +67,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_logout:
                 new KAlertDialog(this, KAlertDialog.CUSTOM_IMAGE_TYPE)
-                        .cancelButtonColor(R.color.colorPrimary)
-                        .confirmButtonColor(R.color.colorPrimary)
+                        .cancelButtonColor(R.color.colorPrimaryDark)
+                        .confirmButtonColor(R.color.colorPrimaryDark)
                         .setCancelText("CANCEL")
                         .setContentText("Do you want to logout?")
                         .setConfirmText("YES")
@@ -78,6 +83,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         .setConfirmClickListener(new KAlertDialog.KAlertClickListener() {
                             @Override
                             public void onClick(KAlertDialog kAlertDialog) {
+                                FirebaseAuth.getInstance().signOut();
                                 startActivity(new Intent(HomeActivity.this, LoginActivity.class));
                                 Animatoo.animateSplit(HomeActivity.this);
                                 kAlertDialog.cancel();
@@ -91,5 +97,25 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            finishAffinity();
+            System.exit(0);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+
+        AlertBar.notifyBackPressed(HomeActivity.this, "Please click BACK again to exit!");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
 }
