@@ -1,4 +1,4 @@
-package com.chathra.littleitalypizzeria.main;
+package com.chathra.littleitalypizzeria.Adapter;
 
 import android.content.Context;
 
@@ -32,9 +32,6 @@ public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch(position) {
-            case 0 :
-                return new PizzaActivity();
-
             case 1 :
                 return new PastaActivity();
 

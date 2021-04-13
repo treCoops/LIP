@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.chathra.littleitalypizzeria.main.SectionsPagerAdapter;
+import com.chathra.littleitalypizzeria.Adapter.SectionsPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Objects;
@@ -29,7 +29,6 @@ public class FoodActivity extends Fragment {
         tabs.setupWithViewPager(viewPager);
 
         Objects.requireNonNull(getActivity()).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
 
         return view;
     }
