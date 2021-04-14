@@ -35,6 +35,9 @@
     <string name="tab_text_3">Beverages</string>
     <string name="tab_text_4">Desserts</string>
     <string name="product_view">Product View</string>
+    <string name="dine_in">Dine In</string>
+    <string name="take_away">Take Away</string>
+    <string name="manage_profile">Manage Profile</string>
 
 
 </resources>
