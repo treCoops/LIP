@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.chathra.littleitalypizzeria.Helper.AlertBar;
 import com.squareup.picasso.Picasso;
 
 public class ProductSingleViewActivity extends AppCompatActivity {
@@ -24,6 +26,9 @@ public class ProductSingleViewActivity extends AppCompatActivity {
         TextView txtProductDescription = findViewById(R.id.txtProductDescription);
         TextView txtProductPrice = findViewById(R.id.txtProductPrice);
         ImageView btnBack = findViewById(R.id.btnBack);
+        Button btnDineIn = findViewById(R.id.btnDineIn);
+        Button btnTakeAway = findViewById(R.id.btnTakeAway);
+
 
         Picasso.get().load(getIntent().getStringExtra("URL")).fit()
                 .into(imgProduct, new com.squareup.picasso.Callback() {
@@ -48,6 +53,20 @@ public class ProductSingleViewActivity extends AppCompatActivity {
                 startActivity(new Intent(ProductSingleViewActivity.this, HomeActivity.class));
                 Animatoo.animateSlideRight(ProductSingleViewActivity.this);
                 onBackPressed();
+            }
+        });
+
+        btnTakeAway.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertBar.notifyInfo(ProductSingleViewActivity.this, "This item has been added for take away.");
+            }
+        });
+
+        btnDineIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertBar.notifyInfo(ProductSingleViewActivity.this, "This item has been added for dine in.");
             }
         });
 

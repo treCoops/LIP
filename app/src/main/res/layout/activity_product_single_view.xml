@@ -113,6 +113,7 @@
                 android:layout_marginBottom="@dimen/_15sdp">
 
                 <Button
+                    android:id="@+id/btnDineIn"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:clickable="true"
@@ -125,6 +126,7 @@
                     android:layout_height="@dimen/_30sdp"/>
 
                 <Button
+                    android:id="@+id/btnTakeAway"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:clickable="true"
